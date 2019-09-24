@@ -102,6 +102,8 @@ class vec3(numpy.ndarray):
         self[1] = rho * math.sin(phi);
         self[2] = z
 
+    def unit(self):
+        return self / abs(self)
 
 def cross(a, b):
     return vec3(numpy.cross(a, b))

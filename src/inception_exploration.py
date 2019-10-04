@@ -29,7 +29,7 @@ fox_image = Image.open('../res/fox.jpg')
 small_fox_image = fox_image.resize((299,299)).convert('RGB')
 imshow(small_fox_image)
 
-fox_tensor = torch.tensor(np.transpose(np.array(small_fox_image, dtype=np.float32), (2,0,1))).float()
+fox_tensor = torch.tensor(np.transpose(np.array(small_fox_image, dtype=np.float32), (2, 0, 1))).float()
 fox_tensor = fox_tensor.unsqueeze(0)
 x = model(fox_tensor)[0]
 

@@ -1,6 +1,6 @@
 import torch
 
-class IntrinsicLoss(torch.nn.Module):
+class ConicLoss(torch.nn.Module):
     def __init__(self):
         super(IntrinsicLoss, self).__init__()
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     w = torch.randn(10, 4, 1, dtype=torch.float, requires_grad=True)
     print('x:', x.shape)
     print('w', w.shape)
-    criterion = IntrinsicLoss()
+    criterion = ConicLoss()
     loss = criterion.forward(x, w)
     print('loss:', loss)
     loss.backward()
